@@ -293,10 +293,10 @@ for i in range(len(listdir)):
                     deviations.append(g['deviation'])
                     modeltypes.append(g['modeltype'])
 
-                os.chdir(load_dir)
+               print(load_dir) 
+               os.chdir(load_dir)
 
                 jsonfilename=filename[0:-4]+'.json'
-                jsonfile=open(jsonfilename,'w')
                 data={
                     'filename':filename,
                     'filetype':'audio file',
@@ -309,6 +309,8 @@ for i in range(len(listdir)):
                     'count':count,
                     'errorcount':errorcount,
                     }
+                print(data)
+                jsonfile=open(jsonfilename,'w')
                 json.dump(data,jsonfile)
                 jsonfile.close()
                 
